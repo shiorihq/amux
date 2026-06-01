@@ -1,0 +1,80 @@
+{
+  "name": "amux",
+  "version": "0.1.0",
+  "description": "The Simple Agent Manager — a polished terminal workspace for local coding agents.",
+  "module": "index.tsx",
+  "type": "module",
+  "license": "MIT",
+  "author": "Shiori LLC",
+  "homepage": "https://github.com/shiorihq/amux#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shiorihq/amux.git"
+  },
+  "bugs": {
+    "url": "https://github.com/shiorihq/amux/issues"
+  },
+  "packageManager": "bun@1.3.13",
+  "publishConfig": {
+    "access": "public"
+  },
+  "bin": {
+    "amux": "./index.tsx"
+  },
+  "files": [
+    "index.tsx",
+    "src/cli.ts",
+    "src/doctor.ts",
+    "src/history.ts",
+    "src/providers.ts",
+    "src/pty.ts",
+    "src/pty-host.cjs",
+    "src/runtime-health.ts",
+    "src/types.ts",
+    "src/ui.tsx",
+    "docs",
+    "README.md",
+    "CHANGELOG.md",
+    "CONTRIBUTING.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "agent",
+    "codex",
+    "claude",
+    "terminal",
+    "tui",
+    "multiplexer"
+  ],
+  "scripts": {
+    "start": "bun run index.tsx",
+    "smoke:help": "bun ./index.tsx --help",
+    "smoke:doctor": "bun ./index.tsx --doctor --cwd .",
+    "smoke:doctor:json": "bun ./index.tsx --doctor --json --cwd .",
+    "smoke:version": "bun ./index.tsx --version",
+    "typecheck": "bunx tsc --noEmit",
+    "test": "bun test",
+    "pack:dry": "bun pm pack --dry-run",
+    "release:check": "bun run typecheck && bun test && bun run smoke:help && bun run smoke:doctor && bun run smoke:doctor:json && bun run smoke:version && bun pm pack --dry-run"
+  },
+  "engines": {
+    "bun": ">=1.3.0",
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/react": "^19.2.15",
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "@homebridge/node-pty-prebuilt-multiarch": "^0.13.1",
+    "@opentui/core": "^0.3.0",
+    "@opentui/react": "^0.3.0",
+    "@xterm/headless": "^6.0.0",
+    "ora": "^9.4.0",
+    "react": "^19.2.6"
+  },
+  "trustedDependencies": [
+    "@homebridge/node-pty-prebuilt-multiarch"
+  ]
+}
