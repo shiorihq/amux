@@ -1,4 +1,4 @@
-const pty = require("@homebridge/node-pty-prebuilt-multiarch");
+const pty = require("@lydell/node-pty");
 const readline = require("node:readline");
 
 const sessions = new Map();

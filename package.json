@@ -1,6 +1,6 @@
 {
   "name": "amux",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "The Simple Agent Manager — a polished terminal workspace for local coding agents.",
   "module": "index.tsx",
   "type": "module",
@@ -67,7 +67,7 @@
     "typescript": "^5"
   },
   "dependencies": {
-    "@homebridge/node-pty-prebuilt-multiarch": "^0.13.1",
+    "@lydell/node-pty": "^1.1.0",
     "@opentui/core": "^0.3.0",
     "@opentui/react": "^0.3.0",
     "@xterm/headless": "^6.0.0",
@@ -75,6 +75,6 @@
     "react": "^19.2.6"
   },
   "trustedDependencies": [
-    "@homebridge/node-pty-prebuilt-multiarch"
+    "@lydell/node-pty"
   ]
 }
